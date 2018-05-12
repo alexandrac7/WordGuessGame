@@ -1,5 +1,5 @@
 
-var grapeArray = ["syrah", "chardonnay", "viognier", "mourvedre", "muscadet", "trollinger", "merlot", "granache", "carignan", "colombard"]
+var grapeArray = ["syrah", "chardonnay", "viognier", "mourvedre", "muscadet", "trollinger", "merlot", "grenache", "carignan", "colombard"]
 
 var wins = 0;
 
@@ -27,7 +27,7 @@ function grapeGame() {
 
     }
 
-    console.log (underScores);
+    console.log(underScores);
 
     document.getElementById("current-word").innerHTML = underScores.join(" ");
     //to reset
@@ -47,24 +47,26 @@ function grapeGame() {
 document.onkeyup = function (event) {
 
     userGuesses = event.key;
-    
-    console.log("USER PRESSED: " + userGuesses)
-    if (randomGrapeArray.indexOf(userGuesses) > -1) {
+
+    if(guessesLeft == 0){
+        alert("Out of guesses. Try again.")
+    }
+    else  if (randomGrapeArray.indexOf(userGuesses) > -1) {
         for (var i = 0; i < randomGrapeArray.length; i++) {
             {
-                if (randomGrapeArray[i] === userGuesses){
-                    underScores[i] = userGuesses;    
+                if (randomGrapeArray[i] === userGuesses) {
+                    underScores[i] = userGuesses;
                 }
-                
+
             }
         }
     }
     else {
-        if(wrongLetters.indexOf(userGuesses) == -1) {
+        if (wrongLetters.indexOf(userGuesses) == -1) {
 
-        
-        wrongLetters.push(userGuesses);
-        guessesLeft--;
+
+            wrongLetters.push(userGuesses);
+            guessesLeft--;
         }
     }
 
@@ -75,17 +77,28 @@ document.onkeyup = function (event) {
     var flag = true;
     for (var i = 0; i < randomGrapeArray.length; i++) {
         {
-            if (underScores.indexOf(randomGrapeArray[i]) == -1){
+            if (underScores.indexOf(randomGrapeArray[i]) == -1) {
                 flag = false;
             }
-            
+
         }
     }
-    if(flag == true){
-        alert("CONGRATS! " + randomGrapeArray.join("") + " was correct!" )
+    if (flag == true) {
+        alert("CONGRATS! " + randomGrapeArray.join("") + " was correct!")
+        wins++;
         grapeGame();
+        document.getElementById("wins").innerHTML = wins;
+
+
     }
+
+
+
+
 }
+
+
+
 
 
 grapeGame();
