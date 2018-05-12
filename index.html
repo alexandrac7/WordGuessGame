@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Word Guess Game
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-3"> Guess the Grape</h1>
+        <p class="lead">Type any key to play.</p>
+        <hr class="my-4">
+      </div>
+
+    <br>
+    <br>
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+
+                <div class="col-sm-4">
+            
+                    <h3 id="current-word-label">Current Word</h3>
+                    <div id="current-word"></div>
+                </div>
+
+                <br>
+
+                    <div class="col-sm-4">
+                        <h3 id="guesses-remaining-label">Guesses Remaining</h3>
+                        <div id="guesses-remaining"></div>
+                    </div>
+                    <br>
+
+                        <div class="col-sm-4">
+                            <h3 id="letters-used-label">Letters Used</h3>
+                            <div id="letters-used"></div>
+                        </div>
+                    <br>
+
+
+
+
+                    </div>
+                </div>
+
+                <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
